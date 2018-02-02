@@ -1,11 +1,3 @@
-<?php
-session_start();
-if(isset($_SESSION['EMAIL']))
-{
-	$output=$_SESSION['EMAIL'];
-}
-$search='';
-?>
 <!DOCTYPE HTML>
 <html>
 	<head>
@@ -27,34 +19,14 @@ $search='';
 					<header id="header" class="alt">
 						<a href="index.php" class="logo"><strong>G-MAX</strong> <span>Groceries, simplified!</span></a>
 						&nbsp&nbsp&nbsp&nbsp&nbsp
-						<?php 
-							if(isset($_SESSION['EMAIL']))
-							{
-								if($_SESSION['NAME']=='Admin')
-								echo "<a href='#menu'>hi ".$_SESSION['NAME'].'</a>';
-
-
-								else echo "hi ".$_SESSION['NAME'];
-							}
-
-						?>
-						<div style="padding-left:6.5%;"?>
+						
+						<div style="padding-left:6.5%;"
 							<div class="0.3u 12u$(xsmall)">
 								<form action="" method="post"><input type="text" placeholder="Search for Groceries" name="demo-name" id="demo-name"></imput>
 							</div>
 						</div>
 						<input type="submit" class="button icon fa-search" name="sbutton" value="Search"></a></form>
-						<?php
-							include_once("dbconfig1.php");
-
-							if(isset($_POST['sbutton']))
-							{
-								$search=$_POST['demo-name'];
-								echo $search;
-								$_SESSION['selectors']=$search;	
-								header("Location:searchbar.php");
-							}	
-						?>
+						
 			
 						<nav>
 							<a href="#menu">Menu</a>
@@ -79,16 +51,14 @@ $search='';
 							<li><a href="#footer">About</a></li>
 						</ul>
 						<ul class="actions vertical">
-						<?php if(!isset($_SESSION['EMAIL']))
-						{?>
+						
 							<li><a href="login.php" class="button special fit">Log In</a></li>
 						
 							<li><a href="signup.php" class="button fit">Sign Up</a></li>
-							<?php } ?>
-							<?php if(isset($_SESSION['EMAIL']))
-							{?>
+							
+							
 							<li><a href="logout.php" class="button special fit">Log out</a></li>
-							<?php } ?>
+							
 						</ul>
 					</nav>
 
@@ -184,11 +154,7 @@ $search='';
 							<ul class="copyright">
 								<li>&copy; G-MAX</li><li>Developers <a href="https://www.facebook.com/yashpramodshinde">Yash Shinde</a>, <a href="https://www.facebook.com/austin.nicholas.165"> &nbsp;&nbsp;Ashish Ramrakhiani</a></li>
 							</ul>
-							<ul class="copyright">
-								<li><?php if(isset($_SESSION['EMAIL']))
-								{
-									echo "Logged in as  <strong>".$_SESSION['EMAIL'].'<strong>';
-								}?></li>
+							<ul class="copyright">								
 							</ul>
 						</div>
 					</footer>
