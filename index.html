@@ -36,18 +36,8 @@
 				
 					<nav id="menu">
 						<ul class="links">
-							<li><?php if(isset($_SESSION['EMAIL']))
-							{
-								if($_SESSION['NAME']=='Admin'){
-								echo '<a href="products.php">DASHBOARD</a>';}
-
-
-								else echo '<a href="#header">hi '.$_SESSION['NAME'].'!</a>';
-							echo'</li>
-							<!--<li><a href="index.php">My Account</a></li>-->
-							<!-- <li><a href="Admin\index.html#two">My Orders</a></li> -->
-							<li><a href="generic.php">My Cart</a></li>';}
-							else echo'<a href="#header">hi! <strong>log in</strong><br> or <strong>sign up</strong> to continue!</a>';?></li>
+							<li>
+							<a href="#header">hi! <strong>log in</strong><br> or <strong>sign up</strong> to continue!</a>'</li>
 							<li><a href="#footer">About</a></li>
 						</ul>
 						<ul class="actions vertical">
